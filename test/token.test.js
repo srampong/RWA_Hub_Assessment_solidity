@@ -6,7 +6,6 @@ const Token = artifacts.require("./Token")
 const assertHolderList = async (token, ...addresses) => {
   const n = await token.getNumTokenHolders()
   const p = []
-  console.log('assertHolderList', n.toString(), addresses)
   for (let i = 1; i <= n; i += 1) {
     p.push(token.getTokenHolder(i))
   }
